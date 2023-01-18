@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<title>Administrator App</title>
+<html>
+    <body> <center>
+        <div class="welcome">
+       <h1> Welcome Administrator</h1>
+       
+        <br>
+        <br>
+        <a href="{% url 'aUser' %}"><button type="button" >List of User</button><br></a>
+      <br>
+      <br>
+      <a href="{% url 'aPackages' %}"><button type="button" >List of Package Services</button><br></a>
+        <br><br>
+        <a href="{% url 'aBookForm' %}"><button type="button">List of Booked Appointment</button></a><br><br><br>
+       <button type="button" >Follow Up Function</button><br></a>
+        <br><br>
+      <a href="{% url 'start' %}"><button type="button" >Back</button><br></a>
+       
+    </div>
+    </center>
+
+    </body>
+
+<style>
+.welcome{
+    background-color: aqua;
+    font-family: 'Courier New', Courier, monospace;
+    border: 2px solid;
+    border-color:darkcyan;
+    border-radius: 30px;
+    width: 80%;
+    height: 555px;
+    
+}
+button{
+    padding: 16px 32px;
+    border-radius: 30px;
+    margin: 4px 2px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    font-family: 'Courier New', Courier, monospace;
+    
+    
+}
+</style>
+</html>

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<title>Booking Appointment</title>
+<html>
+  <body>
+    <center>
+      <div class="welcome">
+        <h1>TwinSpa Booking Appointment</h1>
+        <br />
+        <br />
+        {% for msg in messages%}
+        {{msg}}
+        {% endfor%}
+        <div class="form">
+          <form action="" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <div class="name">
+              <br />
+              <label for="fname">Fullname:</label>
+              <input
+                class="logdata"
+                type="text"
+                id="fname"
+                name="fname"
+                required
+              /><br /><br />
+            </div>
+            <div class="name">
+              <label for="phone">Contact Number:</label>
+              <input
+                class="logdata"
+                type="number"
+                id="contactno"
+                name="contactno"
+                required
+              /><br />
+            </div>
+            <br />
+         
+            <div class="name">
+              <label for="password">Package Services:</label>
+              <select
+              id="packages"
+              name="packages">
+                {% for name in serv%}
+                <option value="asd">{{name}}</option>
+                {% endfor%}
+              </select>
+            </div>
+           
+            <br />
+            <div class="name">
+              <label for="date">Date:</label>
+              <input
+                class="logdata"
+                type="date"
+                id="date"
+                name="date"
+                required
+              /><br />
+            </div>
+            <br />
+            <div class="name">
+              <label for="time">Time:</label>
+              <input
+                class="logdata"
+                type="time"
+                id="time"
+                name="time"
+                required
+              />
+            </div>
+            <br />
+            <div class="name">
+              <br />
+              <label for="add">Additional Services:</label>
+              <input
+                class="logdata"
+                type="textarea"
+                id="add"
+                name="add"
+                required
+              />
+            </div>
+
+            <br />
+            <br />
+            <input class="regbutton" type="submit" value="Book" />
+            <br />
+            <br />
+
+           
+            <a href="{% url 'gHome' %}"
+              ><button type="button">Back</button><br
+            /></a>
+
+            <style>
+              .welcome {
+                background-color: aqua;
+                font-family: "Courier New", Courier, monospace;
+                border: 2px solid;
+                border-color: darkcyan;
+                border-radius: 30px;
+                width: 80%;
+                height: 800px;
+              }
+              button {
+                padding: 16px 32px;
+                border-radius: 30px;
+                margin: 4px 2px;
+                transition-duration: 0.4s;
+                cursor: pointer;
+                font-family: "Courier New", Courier, monospace;
+              }
+              .regbutton {
+                padding: 16px 32px;
+                border-radius: 20px;
+                font-family: "Courier New", Courier, monospace;
+              }
+              .logdata {
+                padding: 2px 2px;
+                font-size: 20px;
+                font-family: "Courier New", Courier, monospace;
+              }
+            </style>
+          </form>
+        </div>
+      </div>
+    </center>
+  </body>
+</html>

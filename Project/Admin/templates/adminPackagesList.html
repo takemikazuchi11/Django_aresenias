@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<title>Table</title>
+<html>
+    <body> <center>
+        <div class="welcome">
+       <h1>List of Package Services</h1>
+       
+        <br>
+        <br>
+        <div>
+            <a href="{% url 'aPAdd' %}"><button type="button" >Add new Service</button></a>
+            <table>
+                <thead>
+                <tr>
+                   
+                    <th>Name</th>
+                    <th>Discount</th>
+                    <th>Price</th>
+                    <th>Details</th>          
+                    <th>Actions</th>
+                     <th></th>
+                  </tr>
+                </thead>
+                <tbody>
+                    {%for serv in service%}
+                    <tr>
+                     
+                      <td>{{serv.name}}</td>
+                      <td>{{serv.discount}}</td>
+                      <td>{{serv.price}}</td>
+                      <td>{{serv.details}}</td>
+                      <td><a href="/Admin/aPUpdate/{{serv.id}}"><button type="button" >Edit</button></a></td>
+                        <td><a href="{% url 'aPDelete' serv.id %}"> <button type="button" onclick="return confirm('Do you want to delete?')">Delete</button></a> </td>
+                    </tr>
+                    {%endfor%}
+                  </tbody>
+                </table>
+        </div>
+        <br><br><br><br>
+       
+        <a href="{% url 'aHome' %}"><button type="button" >Back</button></a>
+        
+    
+    </div>
+   
+
+    </body>
+
+<style>
+.welcome{
+    background-color: aqua;
+    font-family: 'Courier New', Courier, monospace;
+    border: 2px solid;
+    border-color:darkcyan;
+    border-radius: 30px;
+    width: 100%;
+    height: auto;
+    
+}
+button{
+    padding: 16px 32px;
+    border-radius: 30px;
+    margin: 4px 2px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    font-family: 'Courier New', Courier, monospace;
+    
+}
+table {
+  border-collapse: collapse;
+  width: 90%;
+}
+
+th, td {
+  padding: 8px;
+  text-align: left;
+  border-bottom: 1px solid rgb(29, 79, 170);
+}
+
+tr:hover {
+    background-color: #D6EEEE;
+    }
+</style>
+</html>

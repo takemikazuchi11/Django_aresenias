@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<title>Update Page</title>
+<html>
+  <body>
+    <center>
+      <div class="welcome">
+        <h1>Update Package Services Information</h1>
+        <br />
+        <br />
+        {%for msg in messages%}
+        {{msg}}
+        {%endfor%}
+        <div class="form">
+          <form action="{% url 'aPEdit' serv.id %} " method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <div class="name">
+              <br />
+              <label for="name">Name:</label>
+              <input
+                class="logdata"
+                type="text"
+                id="name"
+                name="name"
+                value="{{serv.name}}"
+                required
+              /><br /><br />
+            </div>
+            <div class="name">
+              <label for="discount">Discount:</label>
+              <input
+                class="logdata"
+                type="text"
+                id="discount"
+                name="discount"
+                value="{{serv.discount}}"
+                required
+              /><br />
+            </div>
+            <br />
+            <div class="name">
+              <label for="price">Price:</label>
+              <input
+                class="logdata"
+                type="number"
+                id="price"
+                name="price"
+                value="{{serv.price}}"
+                required
+              />
+            </div>
+            <br />
+            <div class="name">
+              <label for="details">Details:</label>
+              <textarea
+                class="logdata"
+                id="details"
+                name="details"
+                value="{{serv.details}}"
+                required
+                rows="5"
+                cols="40"
+              >{{serv.details}}
+            </textarea>
+              <br />
+
+            </div>
+            <br />
+            <br />
+            <input class="regbutton" type="submit" value="Update" />
+            <br />
+           <br />
+            <a href="{% url 'aPackages' %}"
+              ><button type="button">Back</button><br
+            /></a>
+
+            <style>
+              .welcome {
+                background-color: aqua;
+                font-family: "Courier New", Courier, monospace;
+                border: 2px solid;
+                border-color: darkcyan;
+                border-radius: 30px;
+                width: 80%;
+                height: 800px;
+              }
+              button {
+                padding: 16px 32px;
+                border-radius: 30px;
+                margin: 4px 2px;
+                transition-duration: 0.4s;
+                cursor: pointer;
+                font-family: "Courier New", Courier, monospace;
+              }
+              .regbutton {
+                padding: 16px 32px;
+                border-radius: 20px;
+                font-family: "Courier New", Courier, monospace;
+              }
+              .logdata {
+                padding: 2px 2px;
+                font-size: 20px;
+                font-family: "Courier New", Courier, monospace;
+              }
+              
+
+            </style>
+          </form>
+        </div>
+      </div>
+    </center>
+  </body>
+</html>

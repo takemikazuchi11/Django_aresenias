@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<title>Welcome Page</title>
+<html>
+  <body>
+    <center>
+      <div class="welcome">
+        <h1>Adding a New Package Services</h1>
+        <br />
+        <br />
+        {%for msg in messages%}
+        {{msg}}
+        {%endfor%}
+        <div class="form">
+          <form action="" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <div class="name">
+              <br />
+              <label for="name">Name:</label>
+              <input
+                class="logdata"
+                type="text"
+                id="name"
+                name="name"
+                required
+              /><br /><br />
+            </div>
+            <div class="name">
+              <label for="discount">Discount:</label>
+              <input
+                class="logdata"
+                type="text"
+                id="discount"
+                name="discount"
+                required
+              /><br />
+            </div>
+            <br />
+            <div class="name">
+              <label for="price">Price:</label>
+              <input
+                class="logdata"
+                type="number"
+                id="price"
+                name="price"
+                required
+              />
+            </div>
+            <br />
+            <div class="name">
+              <label for="details">Details:</label>
+              <input
+                class="logdata"
+                type="text"
+                id="details"
+                name="details"
+                required
+              /><br />
+            </div>
+            <br />
+            
+            <br />
+            <input class="regbutton" type="submit" value="Add" />
+            <br />
+            <br />
+            <a href="{% url 'aPackages' %}"
+              ><button type="button">Back</button><br
+            /></a>
+
+            <style>
+              .welcome {
+                background-color: aqua;
+                font-family: "Courier New", Courier, monospace;
+                border: 2px solid;
+                border-color: darkcyan;
+                border-radius: 30px;
+                width: 80%;
+                height: 800px;
+              }
+              button {
+                padding: 16px 32px;
+                border-radius: 30px;
+                margin: 4px 2px;
+                transition-duration: 0.4s;
+                cursor: pointer;
+                font-family: "Courier New", Courier, monospace;
+              }
+              .regbutton {
+                padding: 16px 32px;
+                border-radius: 20px;
+                font-family: "Courier New", Courier, monospace;
+              }
+              .logdata {
+                padding: 2px 2px;
+                font-size: 20px;
+                font-family: "Courier New", Courier, monospace;
+              }
+            </style>
+          </form>
+        </div>
+      </div>
+    </center>
+  </body>
+</html>

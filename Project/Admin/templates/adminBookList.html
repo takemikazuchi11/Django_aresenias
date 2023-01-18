@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<title>Table</title>
+<html>
+    <body> <center>
+        <div class="welcome">
+       <h1>List of Booking Appointment</h1>
+       
+        <br>
+        <br>
+        <div>
+            <table>
+                <thead>
+                <tr>
+                   
+                    <th>FullName</th>
+                    <th>Contact Number</th>
+                    <th>Package Availed</th>
+                    <th>Date</th>
+                    <th>Time</th> 
+                    <th>Additional Services</th>  
+                    <th></th>           
+                    <th>Actions</th>
+                     <th></th>
+                  </tr>
+                </thead>
+                <tbody>
+                    {%for book in booked%}
+                    <tr>
+                     
+                      <td>{{book.fname}}</td>
+                      <td>{{book.contactno}}</td>
+                      <td>{{book.packages}}</td>
+                      <td>{{book.date}}</td>
+                      <td>{{book.time}}</td>
+                      <td>{{book.add}}</td>
+                      <td><button type="button" class="abutton" >Book Accomplish</button></a></td>
+                        <td><a href="{% url 'aBDelete' book.id %}"><button type="button" class="abutton" onclick="return confirm('Do you want to remove?')">Unsuccusesfully Book</button></a> </td>
+                    </tr>
+                    {%endfor%}
+                  </tbody>
+                </table>
+        </div>
+        <br><br><br><br>
+       
+        <a href="{% url 'aHome' %}"><button type="button" >Back</button></a>
+        
+    
+    </div>
+   
+
+    </body>
+
+<style>
+.welcome{
+    background-color: aqua;
+    font-family: 'Courier New', Courier, monospace;
+    border: 2px solid;
+    border-color:darkcyan;
+    border-radius: 30px;
+    width: 100%;
+    height: auto;
+    
+}
+button{
+    padding: 16px 32px;
+    border-radius: 30px;
+    margin: 4px 2px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    font-family: 'Courier New', Courier, monospace;
+    
+}
+table {
+  border-collapse: collapse;
+  width: 90%;
+}
+
+th, td {
+  padding: 8px;
+  text-align: left;
+  border-bottom: 1px solid rgb(29, 79, 170);
+}
+
+tr:hover {
+    background-color: #D6EEEE;
+    }
+.abutton{
+    padding: 8px 6px;
+    border-radius: 30px;
+    margin: 4px 2px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    font-family: 'Courier New', Courier, monospace;
+}
+</style>
+</html>

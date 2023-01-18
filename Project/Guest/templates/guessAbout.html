@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<title>Welcome Page</title>
+<html>
+    <body>         <div class="welcome">
+       <h1> About US</h1>
+        <p>Twin Gems Spa is a holistic haven where mind, body and spirit converge to improve your health, fitness and soul</p>
+     
+        <div>
+        <h3>Category:</h3><p>HealthSpa</p>
+        <h3>Address:</h3><p>Biga, Calapan City (along the Nautical Highway), Oriental Mindoro, Philippines, Calapan, Philippines, 5200</p>
+        <h3>Mobile number:</h3><p>0999 718 1419</p>
+        <h3>Email:</h3><p>twingemsspa@yahoo.com </p>
+    </div>
+        <br/><br/><br/>
+        <a href="{% url 'gHome' %}"> <button type="button">Back</button></a><br><br><br>
+       
+    </div>
+    </center>
+
+    </body>
+
+<style>
+.welcome{
+    background-color: aqua;
+    font-family: 'Courier New', Courier, monospace;
+    border: 2px solid;
+    border-color:darkcyan;
+    border-radius: 30px;
+    width: 100%;
+    height: 580px;
+    
+}
+button{
+    padding: 16px 32px;
+    border-radius: 30px;
+    margin: 4px 2px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    font-family: 'Courier New', Courier, monospace;
+    float: right;
+    margin-right: 50px;
+    
+    
+}
+h1,h3{
+    padding-left: 50px;
+}
+p{
+    padding-left: 50px;
+    font-size: 18px;
+}
+</style>
+</html>
