@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<title>Table</title>
+<html>
+    <body> <center>
+        <div class="welcome">
+       <h1>List of Proffessor</h1>
+       
+        <br>
+        <br>
+        <div>
+            <table>
+                <tr>
+                  <th>Name</th>
+                  <th>Age</th>
+                  <th>Subject</th>
+                  <th>Ranking</th>
+                  <th>Address</th>
+                </tr>
+                <tr>
+                    {% for prof1 in Prof1%}
+                    <th>{{prof1}}</th>
+                    {%endfor%}
+                </tr>
+                <tr>
+                    {% for prof2 in Prof2%}
+                    <th>{{prof2}}</th>
+                    {%endfor%}
+                </tr>
+                <tr>
+                    {% for prof3 in Prof3%}
+                    <th>{{prof3}}</th>
+                    {%endfor%}
+                </tr>
+                <tr>
+                    {% for prof4 in Prof4%}
+                    <th>{{prof4}}</th>
+                    {%endfor%}
+                </tr>
+                
+
+                </tr>
+                </table>
+        </div>
+        <br><br><br><br>
+       
+        <a href="{% url 'goForm' %}"><button type="button" >Go to Form</button></a>
+       <button type="button">View Table</button>
+    
+    </div>
+   
+
+    </body>
+
+<style>
+.welcome{
+    background-color: aqua;
+    font-family: 'Courier New', Courier, monospace;
+    border: 2px solid;
+    border-color:darkcyan;
+    border-radius: 30px;
+    width: 70%;
+    height: 500px;
+    
+}
+button{
+    padding: 16px 32px;
+    border-radius: 30px;
+    margin: 4px 2px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    font-family: 'Courier New', Courier, monospace;
+    
+}
+table {
+  border-collapse: collapse;
+  width: 75%;
+}
+
+th, td {
+  padding: 8px;
+  text-align: left;
+  border-bottom: 1px solid rgb(29, 79, 170);
+}
+
+tr:hover {
+    background-color: #D6EEEE;
+    }
+</style>
+</html>

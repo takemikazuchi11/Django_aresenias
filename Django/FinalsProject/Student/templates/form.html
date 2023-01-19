@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<title>Student Form</title>
+<html>
+  <body>
+    <center>
+      <div class="welcome">
+        <h1>Student Form</h1>
+        <br />
+        <br />
+        <div class="form">
+          <form action="" method="get">
+            <div class="name">
+              <br />
+              <label for="fname">Student Name:</label>
+              <input
+                type="text"
+                id="sname"
+                name="sname"
+                value="{{Name}}"
+              /><br /><br />
+            </div>
+            <div class="name">
+              <label for="age">Age:</label>
+              <input type="number" id="age" name="age" value="{{Age}}" /><br />
+            </div>
+            <br />
+            <div class="name">
+              <label for="course">Course:</label>
+              <input type="text" id="couse" name="couse" value="{{Course}}" />
+            </div>
+            <br />
+            <div class="name">
+              <label for="section">Section:</label>
+              <input
+                type="text"
+                id="section"
+                name="section"
+                value="{{Section}}"
+              />
+              <br />
+              <br />
+              <a href="{% url 'welcome' %}"> <button type="button">Go back to Welcome Page</button></a>
+              <a href="{% url 'goTable' %}"> <button type="button">View Table</button></a>
+            </div>
+          </form>
+        </div>
+
+        <style>
+          .welcome {
+            background-color: aqua;
+            font-family: "Courier New", Courier, monospace;
+            border: 2px solid;
+            border-color: darkcyan;
+            border-radius: 30px;
+            width: 50%;
+            height: 500px;
+          }
+          .name {
+            align-items: right;
+          }
+          .form {
+            border: 1px solid;
+            width: 500px;
+          }
+          button {
+            padding: 16px 32px;
+            border-radius: 30px;
+            margin: 4px 2px;
+            transition-duration: 0.4s;
+            cursor: pointer;
+            font-family: 'Courier New', Courier, monospace;
+          }
+          input{
+            font-family: 'Courier New', Courier, monospace;
+            height:20px;
+          }
+        </style>
+      </div>
+    </center>
+  </body>
+</html>

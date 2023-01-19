@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<title>Welcome Page</title>
+<html>
+    <body> <center>
+        <div class="welcome">
+       <h1> DJANGO WITH DATABASE</h1>
+       
+        <br>
+        <br>
+        <a href="{% url 'goForm2' %}"><button type="button" >Go to Form</button><br></a>
+        <br><br>
+        <a href="{% url 'goTable2' %}"><button type="button">View Table</button></a><br><br><br>
+       
+    </div>
+    </center>
+
+    </body>
+
+<style>
+.welcome{
+    background-color: aqua;
+    font-family: 'Courier New', Courier, monospace;
+    border: 2px solid;
+    border-color:darkcyan;
+    border-radius: 30px;
+    width: 50%;
+    height: 500px;
+    
+}
+button{
+    padding: 16px 32px;
+    border-radius: 30px;
+    margin: 4px 2px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    font-family: 'Courier New', Courier, monospace;
+    
+    
+}
+</style>
+</html>
